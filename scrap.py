@@ -9,7 +9,11 @@ url = "https://alura-site-scraping.herokuapp.com/hello-world.php"
 response = urlopen(url)
 html = trata_html(response.read())
 
-print(html)
-
 soup = BeautifulSoup(html, 'html.parser')
-print(soup.find('h1', {'class': 'sub-header'}).get_text())
+
+print(soup.img.attrs.keys())
+print(soup.img.attrs.values())
+
+print(soup.img['src'])
+print(soup.img.get('src'))
+print(soup.img.attrs['src'])
